@@ -1,0 +1,17 @@
+{
+    "unicast" : "127.0.0.1",
+    "logging" : { "level" : "info", "console" : "true" },
+    "applications" : [
+        { "name" : "Gateway", "id" : "0x1111" },
+        { "name" : "TelemetryClient", "id" : "0x2222" },
+        { "name" : "ShellClient", "id" : "0x3333" }
+    ],
+    "services" : [
+        {
+            "service" : "0x4000", "instance" : "0x0001", "unreliable" : "30509",
+            "events" : [ { "event" : "0x8005" } ],
+            "eventgroups" : [ { "eventgroup" : "0x0044", "events" : [ "0x8005" ] } ]
+        }
+    ],
+    "routing" : "Gateway"
+}
