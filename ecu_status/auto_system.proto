@@ -1,0 +1,20 @@
+syntax = "proto3";
+package vshield;
+
+message Telemetry {
+    uint32 ecu_id = 1;
+    float value = 2;
+    uint64 timestamp = 3;
+    string status = 4;
+}
+
+message StatusResponse {
+    uint32 total_packets = 1;
+    uint32 active_ecus = 2;
+    string system_mode = 3;
+}
+
+message EmergencyAlert {
+    string message = 1;
+    uint32 severity = 2;
+}
