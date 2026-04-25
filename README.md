@@ -35,3 +35,29 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/jay/vsomeip_build/vsomeip/install/
 
 5. Run Client in Terminal 2
 ./build/client
+
+# ECU status
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/jay/vsomeip_build/vsomeip/install/lib
+
+export VSOMEIP_CONFIGURATION=../config/server.json
+./gateway_server
+
+export VSOMEIP_CONFIGURATION=../config/client_telemetry.json
+./telemetry_client
+
+export VSOMEIP_CONFIGURATION=../config/client_shell.json
+./shell_client
+
+Shell>
+
+status: Type this and press Enter.
+
+    The Shell sends a request to the Gateway.
+
+    The Gateway calculates how many packets it has received from the Telemetry client and how many unique ECUs it has seen.
+
+    The Shell prints the [RESULT] block with the live counts.
+
+exit: Type this to shut down the shell gracefully.
+
+Ctrl+C: Use this in any terminal to trigger the new signal-based shutdown logic.
