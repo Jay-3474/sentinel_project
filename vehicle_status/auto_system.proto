@@ -1,0 +1,12 @@
+syntax = "proto3";
+package auto_system;
+
+message TelemetryRequest {
+    uint32 vehicle_id = 1;
+}
+
+message VehicleStatus {
+    float speed = 1;
+    string engine_state = 2;
+    float fuel_level = 3;
+}
